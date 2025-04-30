@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #ab45ba, #1d71e8);
+}
+
+body {
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+}
+
+.main {
+    max-width: 75rem;
+    padding: 3em 1.5em;
+}
+
+
+.cards {
+    position: relative;
+}
+
+
+.converter{
+    
+   
+    margin: auto;
+    padding: 20px;
+   
+    border-radius: 10px;
+    
+}
+.card {
+    --flow-space: 2em;
+    --hsl: var(--hue), var(--saturation), var(--lightness);
+    flex: 1 1 14rem;
+    max-width: 400px;
+    padding: 1.5em 2em;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: start;
+    gap: 1.25em;
+    color: #eff1ec;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #2b2b2b;
+    border: 1px solid #eceff133;
+    border-radius: 15px;
+}
+
+.card:nth-child(1) {
+    --hue:165;
+    --saturation: 99.26%;
+    --lightness: 51.37%;
+}
+
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1.25em);
+}
+
+.cta {
+    display: block;
+    align-self: end;
+    margin: 8em 0 3.85em 0;
+    text-align: center;
+    text-decoration: none;
+    
+  
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 900;
+}
+button:hover{
+    background-color: #f1cb20;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+  
+}
+button{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    width: 100%;
+    
+    border-radius: 10px;
+}
+
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    opacity: var(--opacity, 0);
+    -webkit-mask: radial-gradient(
+            25rem 25rem at var(--x) var(--y),
+            #000 1%,
+            transparent 50%
+    );
+    mask: radial-gradient(
+            25rem 25rem at var(--x) var(--y),
+            #000 1%,
+            transparent 50%
+    );
+    transition: 400ms mask ease;
+    will-change: mask;
+}
+
+.overlay .card {
+    background-color: hsla(var(--hsl), 0.15);
+    border-color: hsla(var(--hsl), 1);
+    box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+.overlay .cta {
+    display: block;
+    grid-row: -1;
+    width: 100%;
+    background-color: hsl(var(--hsl));
+    box-shadow: 0 0 0 1px hsl(var(--hsl));
+}
+
+
+/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
+
+select, input{
+    width: 96%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+#result{
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    color: #393838;
+}
+
+@media screen and (max-width:500px){
+    .converter{
+        width: 90%;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    h2{
+        color: #333;
+        
+    }
+}
